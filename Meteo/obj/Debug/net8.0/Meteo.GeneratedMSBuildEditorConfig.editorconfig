@@ -32,26 +32,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[G:/Projects/Meteo/Meteo/Views/Shared/_BaseFrontLayout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9CYXNlRnJvbnRMYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[G:/Projects/Meteo/Meteo/Views/Shared/_CommonMasterLayout.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Db21tb25NYXN0ZXJMYXlvdXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[G:/Projects/Meteo/Meteo/Views/Shared/_FooterFront.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXJGcm9udC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[G:/Projects/Meteo/Meteo/Views/Shared/_NavbarFront.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9OYXZiYXJGcm9udC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[G:/Projects/Meteo/Meteo/Views/Shared/_StylesFront.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TdHlsZXNGcm9udC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [G:/Projects/Meteo/Meteo/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

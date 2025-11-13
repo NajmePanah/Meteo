@@ -1,0 +1,283 @@
+############################################################
+# فایل‌های تولید شده توسط Visual Studio و دات‌نت
+############################################################
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.pidb
+*.pdb
+*.obj
+*.log
+*.tmp
+*.bak
+*.cache
+*.ilk
+*.tmp_proj
+*.svclog
+
+# پوشه‌های خروجی بیلد
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# تنظیمات محیط‌های توسعه مثل ReSharper یا Rider
+.vs/
+_ReSharper*/
+.idea/
+*.DotSettings.user
+
+############################################################
+# فایل‌های تست، بنچمارک، گزارش و خروجی‌های مرتبط
+############################################################
+TestResult*/
+test-results/
+BenchmarkDotNet.Artifacts/
+*.coverage
+*.coveragexml
+*.trx
+*.VisualState.xml
+*.gpState
+*.mm.*
+AutoTest.Net/
+
+############################################################
+# فایل‌ها و پوشه‌های مربوط به انتشار و پکیج‌سازی
+############################################################
+publish/
+*.publish.xml
+*.azurePubxml
+*.pubxml
+*.publishproj
+PublishScripts/
+AppPackages/
+BundleArtifacts/
+*.appx
+
+############################################################
+# فایل‌ها و پوشه‌های آپلود شده توسط کاربر – باید نادیده گرفته شوند
+############################################################
+# نادیده‌ گرفتن پوشه‌ها و فایل‌های آپلود شده در هر مسیر از پروژه
+**/UploadedAttachedFiles/
+**/UploadedAttachedFiles/**
+
+**/_content/
+**/_content/**
+
+# اگر می‌خواهید فقط فایل‌ها نادیده گرفته شوند ولی پوشه‌ها بمانند، از فایل .gitkeep استفاده کنید
+# !**/UploadedAttachedFiles/.gitkeep
+# !**/_content/.gitkeep
+
+############################################################
+# فایل‌های موقتی دیتابیس‌های SQLite
+############################################################
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*-shm
+*-wal
+
+############################################################
+# فایل‌های خاص سیستم‌عامل‌ها
+############################################################
+# فایل‌های macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# فایل‌های ویندوز
+Thumbs.db
+ehthumbs.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+############################################################
+# پوشه‌های مربوط به Node.js و JavaScript
+############################################################
+node_modules/
+bower_components/
+
+############################################################
+# فایل‌ها و پوشه‌های مربوط به بسته‌های NuGet
+############################################################
+*.nupkg
+**/packages/*
+!**/packages/build/
+*.nuget.props
+*.nuget.targets
+
+############################################################
+# فایل‌های متفرقه
+############################################################
+*.bak
+*.pfx
+*.publishsettings
+*.tss
+*.jmconfig
+*.btp.cs
+*.btm.cs
+*.odx.cs
+*.xsd.cs
+*.nvuser
+*.binlog
+
+# فایل‌های فشرده و بایگانی‌شده
+*.tar.gz
+tarballs/
+
+# لاگ‌های محلی (مثلاً در بخش Portal.Main)
+Portal.Main/logs/
+
+# کتابخانه‌هایی که نباید در گیت باشند (مثلاً tinymce)
+Portal.Main/src/libs/tinymce/
+/Portal.Main/wwwroot/fanamarFiles/amlak/187/راهنمای برون سپاری استعلام گواهی نقل و انتقال املاک به دفاتر اسناد رسمی.pdf
+/Portal.Main/wwwroot/fanamarFiles/amlak/187/راهنمای سامانه نقل و انتقال املاک جدید.pdf
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/01. ورود کلاسه  - کارمند ثبت نام.mp4
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/01. ورود کلاسه  - کارمند ثبت نام.pdf
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/02. ثابت ملک - کارمند ثبت نام.pdf
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/03. پلاک ثبتی - کارمند ثبت نام.mp4
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/03. پلاک ثبتی - کارمند ثبت نام.pdf
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/04. اطلاعات تکمیلی ملک - کارمند ثبت نام.mp4
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/04. اطلاعات تکمیلی ملک - کارمند ثبت نام.pdf
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/05. مودیان پرونده - کارمند ثبت نام.mp4
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/05. مودیان پرونده - کارمند ثبت نام.pdf
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/06.ارجاع اظهارنامه - مسئول حوزه کاری حسابرسی.mp4
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/07.0 الحاق اظهارنامه - حسابرس ارشد مالیاتی رسیدگی و  کارمند ثبت نام.mp4
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/07.1. ابطال حکم رسیدگی اظهارنامه و پرونده - مسئول حوزه کاری حسابرسی.mp4
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/08. ورود به رسیدگی - حسابرس ارشد مالیاتی رسیدگی.mp4
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/09. ورود به پرونده جهت رسیدگی - حسابرس ارشد مالیاتی رسیدگی.mp4
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/10. ثبت بلوک پرونده - حسابرس ارشد مالیاتی رسیدگی.mp4
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/11. اطلاعات مستاجر - حسابرس ارشد مالیاتی رسیدگی.mp4
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/12. دعوتنامه اسناد و مدارک ،ابلاغ و صورتمجلس - حسابرس ارشد مالیاتی رسیدگی.mp4
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/13. گزارش رسیدگی - حسابرس ارشد مالیاتی رسیدگی.mp4
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/14. تایید گزارش حسابرسی - رئیس گروه مالیاتی.mp4
+/Portal.Main/wwwroot/fanamarFiles/amlak/NewAmlak/VID_Amozesh_Most.mp4
+/Portal.Main/wwwroot/fanamarFiles/amlak/OldAmlak/راهنمای استفاده از سیستم مالیات بر مستغلات اجاری.pdf
+/Portal.Main/wwwroot/fanamarFiles/amlak/OldAmlak/نمونه فرم ورود اطلاعات خلاصه پرونده مستغلات اجاری.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/Motefareqeh/آموزش Flash Fill در اکسل.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/Motefareqeh/آموزش پاک کردن تاریخچه مرورگر.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/Motefareqeh/راهنمای تصویری رفع مشکل باز نشدن صفحه صورت معاملات در مرورگرها.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/TaeyeenSath/1-سوالات آزمون مرحله اول 12 مهر 1403-ارث - املاک - سامانه ها.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/TaeyeenSath/2-سوالات ازمون مرحله 2-شنبه14 مهر1403- مشاغل و حقوق و اتفاقی و حق الوکاله2.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/TaeyeenSath/3-سوالات مرحله سوم- یکشنبه 15 مهر 1403-  ارزش افزوده-سامانه مودیان.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/TaeyeenSath/4-سوالات مرحله چهارم-دوشنبه 16 مهرماه 1403 اشخاص حقوقی- معافیت ها- هزینه هزینه های قابل قبول و استهلاکات.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/TaeyeenSath/5-سوالات مرحله پنجم سه شنبه17 مهر 1403- آزمون جامع اول.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/TaeyeenSath/6-سوالات مرحله ششم -چهارشنبه 18مهر 1403- آزمون جامع دوم.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/TaeyeenSath/سوالات سطح 1.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/TaeyeenSath/سوالات سطح 2.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/TaeyeenSath/سوالات سطح 3.pdf
+/Portal.Main/wwwroot/fanamarFiles/bahrebardari/راهنمای تصویری رفع مشکل باز نشدن صفحه صورت معاملات در مرورگرها.pdf
+/Portal.Main/wwwroot/fanamarFiles/erth/ErsEzharNewRahnama.pdf
+/Portal.Main/wwwroot/fanamarFiles/heyat/اقدام سنیم_1404-06-29 (1).xlsx
+/Portal.Main/wwwroot/fanamarFiles/heyat/پرونده های بالای 100 میلیارد آبان ماه.pdf
+/Portal.Main/wwwroot/fanamarFiles/heyat/پرونده های بالای 100 میلیارد شهریورماه.pdf
+/Portal.Main/wwwroot/fanamarFiles/heyat/پرونده های بالای 100 میلیارد مهرماه.pdf
+/Portal.Main/wwwroot/fanamarFiles/heyat/گزارش تعیین وقت مهر.xlsx
+/Portal.Main/wwwroot/fanamarFiles/mashaghel/راهنمای اظهارنامه مشاغل انفرادی-گروه اول. نسخه اصلاحی 8خرداد.pdf
+/Portal.Main/wwwroot/fanamarFiles/mashaghel/راهنمای اظهارنامه مشاغل.انفرادی-گروه دوم و سوم نسخه اصلاحی 8 خرداد.pdf
+/Portal.Main/wwwroot/fanamarFiles/mashaghel/راهنمای ثبت مشخصات صندوق فروش و حافظه مالیاتی.pdf
+/Portal.Main/wwwroot/fanamarFiles/mashaghel/نامه دفتر تنظیم مقررات در رابطه با صندوق فروش و حافظه مالیاتی.pdf
+/Portal.Main/wwwroot/fanamarFiles/mashaghel/پرسش وپاسخهای صندوق فروش و حافظه مالیاتی.pdf
+/Portal.Main/wwwroot/fanamarFiles/omoorEdari/Chargon/راهنمای سریع استفاده از اتوماسیون.pdf
+/Portal.Main/wwwroot/fanamarFiles/omoorEdari/Chargon/راهنمای پوشه_بندی و طبقه_بندی شخصی محتوا در کارتابل_.pdf
+/Portal.Main/wwwroot/fanamarFiles/omoorEdari/Chargon/مستند راهنمای الگوهای جدید.pdf
+/Portal.Main/wwwroot/fanamarFiles/omoorEdari/Chargon/مستند پرینت گرفتن نامه.pdf
+/Portal.Main/wwwroot/fanamarFiles/omoorEdari/Taavoni/سامانه تعاونی اعتبار.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Etelaeeye/0.009 راهنمای جابجایی اظهارنامه های ارزش افزوده بین تین های مودیانی که به اشتباه بارگذاری شده اند.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Etelaeeye/0.01 راهنمای کاربری سامانه یکپارچه مالیاتی سنیم.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Etelaeeye/0.04 نامه 60577تغییرات جدید سنیم  تاریخ 14040811.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Etelaeeye/0.05تغییرات سنیم  نامه 60577 -14040811 ویرایش 2.178 اویت 141( سامانه نرم افزاری یکپارچه مالیاتی ).pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Etelaeeye/آموزش پاک کردن تاریخچه مرورگر.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Etelaeeye/تفویض اختیار بخشودگی و تقسیط به رؤسای ادارات-نامه 67641.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Etelaeeye/تفویض اختیار بخشودگی و تقسیط به معاونین-نامه 67634.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Etelaeeye/شیوه بارگذاری اسناد حسابداری نیازمند تایید در کارتابل مدیر کل محترم.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Etelaeeye/مبانی محاسبات و جزئیات اظهارنامه های برآوردی صادر شده توسط سازمان.xlsx
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Eterazat/1-نیازمندی 4575 ثبت اصلاح رای 238_خارج از بازه 45 روزه.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Eterazat/2-فرایند اصلاح رای -در بازه زمانی 45 روز توسط ادارات.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Eterazat/اعتراض پورتال.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Eterazat/راهنمای استفاده آزمایشی از سامانه ثبت اعتراض.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Eterazat/راهنمای استفاده آزمایشی از سامانه ثبت اعتراضات و شکایات.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Eterazat/راهنمای ثبت رای 251 مکرر در اداره امور مالیاتی.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Eterazat/راهنمای کاربردی فراهم سازی امکان ثبت اعتراض.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Eterazat/شیوه ارسال مستقیم برگ تشخیص .pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Eterazat/نامه 27501 مورخ 13990625 آموزش ثبت رای 251 مکرر.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Forms/فرم استرداد ارزش افزوده با رعایت مفاد سامانه مودیان.doc
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Forms/فرم استرداد ماده 242 با رعایت مفاد سامانه مودیان.xls
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Forms/فرم بخشودگی با رعایت مفاد سامانه مودیان.doc
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Forms/فرم تقسیط  با رعایت مفاد سامانه مودیان.doc
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Hesabdari/1-نحوه تسویه و تراز نمودن بدهی مودی.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Hesabdari/2_دستورالعمل بارگذاری پرداخت های مودی در حساب سنیم مودی.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Hesabdari/3-دستورالعمل کامل بخشودگی جرائم در سامانه سنیم.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Hesabdari/استرداد.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Hesabdari/بخشودگی-حذف بدهی.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Hesabdari/ترتیب پرداخت.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Hesabdari/تقسیط بدهی.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Hesabdari/ثبت چک برگشتی.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Hesabdari/ثبت چک در ایریس.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Hesabdari/راهنمای استرداد.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Hesabdari/راهنمای تخصیص، بستن و مغایرت گیری صندوق.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Hesabdari/راهنمای ثبت و تائید مغایرت گیری.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Hesabdari/راهنمای کاربردی چاپ مجدد رسید چک از سامانه قبض بانک.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Hesabdari/صدور قبض نقدی چک های برگشتی.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Hesabdari/نحوه پرداخت در سنیم.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Ezharname/1-شیوه تبدیل وضعیت اظهارنامه از ارزیابی شد به اعمال شد.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Ezharname/2-اظهار نامه حق تمبر سرمایه در سنیم.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Ezharname/3-فرآیند تولید اظــهارنامه ماده 30 سنیم- چارت.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/EzharnameBaravordi/شیوه تسلیم اظهارنامه اعتراضی به تشخیص برآوردی.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Motefareqe/تفویض اختیار بخشودگی و تقسیط به رؤسای ادارات-نامه 67641 (1).pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Motefareqe/تفویض اختیار بخشودگی و تقسیط به رؤسای ادارات-نامه 67641.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Motefareqe/تفویض اختیار بخشودگی و تقسیط به معاونین-نامه 67634.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Motefareqe/شیوه بارگذاری اسناد حسابداری نیازمند تایید در کارتابل مدیر کل محترم.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/NamehayeTaghyeeratSanim/نامه 16096 مورخ 14030312 تغییرات سنیم.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/NamehayeTaghyeeratSanim/نامه 59493 تاریخ 14010916 - تغییرات ماژول اظهارنامه، اعتراض.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Sabtenam/تخصیص گروه به مودی برای مودیانی که جدیدا ثبت نام می شوند.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Sabtenam/دستورالعمل ایجاد شعبه جهت ثبت_نام منبع مالیاتی ارزش افزوده.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Sabtenam/دستورالعمل بهره برداری از مشارکتی.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Sabtenam/دستورالعمل بهره برداری از نسخه سنیم مودیان چند فعالیتی.pdf
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Sabtenam/راهنمای پیش ثبت نام مودیان فاقد ثبت نام الکترونیکی شناسایی شده توسط ادارات کل جهت تشکیل پرونده مالیاتی در سنیم.pdf
+/Portal.Main/wwwroot/fanamarFiles/others/address.jpg
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Ticket/1_فایل خام بارگذاری قبوض.xlsx
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Ticket/2_فایل پیوست تیکت جهت اصلاح تاریخ آغاز فعالیت یا موثر.xlsx
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Ticket/3-فایل پیوست جهت بارگذاری اظهارنامه ارزش افزوده.xlsx
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Ticket/4-حذف پرداختی (پیوست  نامه چارگون گردد  نه تیکت).xlsx
+/Portal.Main/wwwroot/fanamarFiles/tarheJame/Ticket/5-فایل خام بارگذاری قبوض ارزش افزوده.xlsx
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/منتخب سالانه هفته نامه های شماره 1 تا 20.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/نمونه سوالات تستی.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 01.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 02.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 03.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 04.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 05.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 06.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 07.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 08.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 09.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 10.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 11.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 12.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 13.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 14.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 15.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 16.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 17.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 18.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 19.pdf
+/Portal.Main/wwwroot/fanamarFiles/amoozesh/SamanehMoadian/هفته نامه آموزشی و اطلاع رسانی قانون پایانه های فروشگاهی و سامانه مودیان شماره 20.pdf
+/Portal.Main/wwwroot/fanamarFiles
