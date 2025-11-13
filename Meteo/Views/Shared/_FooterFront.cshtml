@@ -1,0 +1,25 @@
+@using System.Reflection;
+@{
+    TempData.Keep();
+    ViewData["containerNav"] = (ViewData["containerNav"] ??= "container-fluid");
+    var assembly = Assembly.GetExecutingAssembly();
+    var version = assembly.GetName().Version.ToString();
+    var assemblyLocation = assembly.Location;
+    var fileInfo = new FileInfo(assemblyLocation);
+    var creationDate = fileInfo.LastWriteTime;
+}
+<!-- Footer: Start -->
+<footer class="landing-footer bg-body footer-text">
+    <div class="footer-bottom py-1 py-md-3">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-12">
+                    <small class="footer-link text-secondary">طراحی و توسعه توسط معاونت فناوری اطلاعات و امنیت فضای مجازی</small>
+                </div>
+                <div class="col-12">
+                    <small class="footer-link text-light">نسخه :@version  - زمان انتشار: @creationDate./* ToPersianShortDateTimeString() */</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

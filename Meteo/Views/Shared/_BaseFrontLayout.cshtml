@@ -1,0 +1,31 @@
+﻿@{
+    Layout = "_CommonMasterLayout";
+    ViewData["navbarType"] = (ViewData["navbarType"] ?? "layout-navbar-fixed");
+    ViewData["isFront"] = (ViewData["isFront"] ??= true);
+}
+
+@section VendorStyles {
+    @RenderSection("VendorStyles", required: false)
+}
+
+@section PageStyles {
+    @RenderSection("PageStyles", required: false)
+}
+
+
+<!-- Navbar -->
+@await Html.PartialAsync("_NavbarFront")
+<!-- / Navbar -->
+
+@RenderBody()
+
+<!-- Footer -->
+@await Html.PartialAsync("_FooterFront")
+<!-- / Footer -->
+@section VendorScripts {
+    @RenderSection("VendorScripts", required: false)
+}
+
+@section PageScripts {
+    @RenderSection("PageScripts", required: false)
+}
