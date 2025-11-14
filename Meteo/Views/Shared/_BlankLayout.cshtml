@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - پرتال اداره کل</title>
+
+    <!-- Vendor Styles -->
+    @RenderSection("VendorStyles", required: false)
+
+    <!-- Page Styles -->
+    @RenderSection("PageStyles", required: false)
+
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+
+    <div class="container-fluid p-0">
+        @RenderBody()
+    </div>
+
+    <!-- Vendor Scripts -->
+    @RenderSection("VendorScripts", required: false)
+
+    <!-- Page Scripts -->
+    @RenderSection("PageScripts", required: false)
+
+</body>
+</html>

@@ -1,10 +1,11 @@
 using System.Diagnostics;
+using Main.Meteo.Controllers;
 using Meteo.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Meteo.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly ILogger<HomeController> _logger;
 
