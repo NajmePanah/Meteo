@@ -1,4 +1,11 @@
 ﻿<ul class="menu-inner py-1">
+    <li class="menu-item">
+        <form asp-controller="Auth" asp-action="Logout" method="post" class="d-inline">
+            <button type="submit" class="btn btn-link text-danger">
+                <i class="ti ti-logout me-2"></i> خروج
+            </button>
+        </form>
+    </li>
     <!-- Dashboards -->
     <li class="menu-item active open">
         <a href="javascript:void(0);" class="menu-link menu-toggle">

@@ -207,3 +207,4 @@ D:\C#\Meteo\Meteo\Meteo\obj\Debug\net8.0\Meteo.csproj.AssemblyReference.cache
 D:\C#\Meteo\Meteo\Meteo\obj\Debug\net8.0\Meteo.csproj.Up2Date
 D:\C#\Meteo\Meteo\Meteo\bin\Debug\net8.0\BCrypt.Net-Next.dll
 D:\C#\Meteo\Meteo\Meteo\obj\Debug\net8.0\scopedcss\Views\Shared\_BlankLayout.cshtml.rz.scp.css
+D:\C#\Meteo\Meteo\Meteo\bin\Debug\net8.0\Newtonsoft.Json.dll

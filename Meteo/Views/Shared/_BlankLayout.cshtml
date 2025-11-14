@@ -1,4 +1,68 @@
-﻿<!DOCTYPE html>
+﻿@using Main.Meteo.ExtensionMethods
+
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - پورتال اداره کل</title>
+
+    <!-- Vendor Styles -->
+    @RenderSection("VendorStyles", required: false)
+
+    <!-- Page Styles -->
+    @RenderSection("PageStyles", required: false)
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+</head>
+
+<body class="bg-light">
+
+    <div class="container-fluid p-0">
+
+        @* ███ پیام‌ها اینجا نمایش داده می‌شوند ███ *@
+        @{
+            var messages = TempData.Get<List<string>>("Messages");
+            var classes = TempData.Get<List<string>>("MessageClasses");
+        }
+
+        @if (messages != null && messages.Any())
+        {
+            for (int i = 0; i < messages.Count; i++)
+            {
+                var cls = classes.Count > i ? classes[i] : "info";
+
+                <div class="alert alert-@cls alert-dismissible fade show mt-2">
+                    @messages[i]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+
+            TempData.Remove("Messages");
+            TempData.Remove("MessageClasses");
+        }
+
+        @RenderBody()
+    </div>
+
+    <!-- Vendor Scripts (Bootstrap MUST be here) -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Vendor Scripts -->
+    @RenderSection("VendorScripts", required: false)
+
+    <!-- Page Scripts -->
+    @RenderSection("PageScripts", required: false)
+
+</body>
+</html>
+
+
+
+@* <!DOCTYPE html>
 <html lang="fa">
 <head>
     <meta charset="utf-8" />
@@ -13,11 +77,38 @@
 
     <link href="~/css/site.css" rel="stylesheet" />
 </head>
-<body class="bg-light">
 
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+<body class="bg-light">
+   
+    <!-- Content -->
     <div class="container-fluid p-0">
+        @using Main.Meteo.ExtensionMethods
+        @using Newtonsoft.Json
+        @{
+            var messages = TempData.Get<List<string>>("Messages");
+            var classes = TempData.Get<List<string>>("MessageClasses");
+        }
+
+        @if (messages != null && messages.Any())
+        {
+            for (int i = 0; i < messages.Count; i++)
+            {
+                var cls = classes.Count > i ? classes[i] : "info";
+                <div class="alert alert-@cls alert-dismissible mt-2">
+                    @messages[i]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            }
+
+            TempData.Remove("Messages");
+            TempData.Remove("MessageClasses");
+        }
         @RenderBody()
     </div>
+    <!-- / Content -->
 
     <!-- Vendor Scripts -->
     @RenderSection("VendorScripts", required: false)
@@ -27,3 +118,4 @@
 
 </body>
 </html>
+ *@

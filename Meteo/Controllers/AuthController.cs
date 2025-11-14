@@ -55,10 +55,12 @@ namespace Main.Meteo.Controllers
             return Redirect(model.ReturnUrl ?? "/");
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Logout()
         {
             await HttpContext.SignOutAsync();
-            return RedirectToAction("Login");
+            return RedirectToAction("Login", "Auth");
         }
     }
 }

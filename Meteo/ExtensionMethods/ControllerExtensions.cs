@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
 using Microsoft.AspNetCore.Routing;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,27 +38,28 @@ namespace Main.Meteo.ExtensionMethods
         }
         public static void SetMessage(this Controller ctr, MessageEnum type, string message)
         {
-            try
-            {
-                if (ctr.TempData["Message"] == null || ctr.TempData["Class"] == null)
-                {
-                    ctr.TempData["Message"] = new List<string>();
-                    ctr.TempData["Class"] = new List<string>();
-                }
-                //((List<string>)ctr.TempData["Message"]).Add(message);
-                //((List<string>)ctr.TempData["Class"]).Add(type.ToString());
-                if (ctr.TempData["Message"] is string[])
-                {
-                    ctr.TempData["Message"] = new List<string>((string[])ctr.TempData["Message"]);
-                    ctr.TempData["Class"] = new List<string>((string[])ctr.TempData["Class"]);
-                }
-                ((List<string>)ctr.TempData["Message"]).Add(message);
-                ((List<string>)ctr.TempData["Class"]).Add(type.ToString());
-            }
-            catch(Exception ex) {
-                ctr.TempData["Message"] = new List<string>();
-                ctr.TempData["Class"] = new List<string>();
-            }
+            // بازیابی پیام‌های قبلی
+            var messages = ctr.TempData.Get<List<string>>("Messages") ?? new List<string>();
+            var classes = ctr.TempData.Get<List<string>>("MessageClasses") ?? new List<string>();
+
+            messages.Add(message);
+            classes.Add(type.ToString());
+
+            // ذخیره مجدد به صورت JSON
+            ctr.TempData.Put("Messages", messages);
+            ctr.TempData.Put("MessageClasses", classes);
+        }
+
+        // متد کمکی برای TempData
+        public static void Put<T>(this ITempDataDictionary tempData, string key, T value)
+        {
+            tempData[key] = JsonConvert.SerializeObject(value);
+        }
+
+        public static T Get<T>(this ITempDataDictionary tempData, string key)
+        {
+            tempData.TryGetValue(key, out object o);
+            return o == null ? default : JsonConvert.DeserializeObject<T>((string)o);
         }
         public static string GetModelStateErrors(this Controller ctr,string seprator= ";")
         {
@@ -74,3 +77,5 @@ namespace Main.Meteo.ExtensionMethods
         info = 5
     }
 }
+
+
