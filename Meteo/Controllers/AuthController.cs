@@ -30,7 +30,7 @@ namespace Main.Meteo.Controllers
                 .Include(u => u.UserRoles)
                     .ThenInclude(ur => ur.Role)
                 .FirstOrDefaultAsync(u => u.Username == model.UserName);
-
+            var test = model.Password.ToSha256Hash();
             if (user == null || model.Password.ToSha256Hash() != user.H256Password)
             {
                 this.SetMessage(MessageEnum.danger, "نام کاربری یا کلمه عبور اشتباه است.");

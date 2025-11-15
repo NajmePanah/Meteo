@@ -1,52 +1,102 @@
 ﻿@model Main.Meteo.ViewModels.User.LoginViewModel
+@using Main.Meteo.ExtensionMethods
+
 @{
     Layout = "_BlankLayout";
     ViewData["Title"] = "ورود به سامانه";
 }
+<html lang="fa">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<div class="authentication-wrapper authentication-cover">
-    <div class="authentication-inner row m-0">
-        <div class="d-flex col-12 col-lg-3 flex-column align-items-center authentication-bg p-sm-12 pt-12 ps-4 pe-4 position-relative">
-            <div class="col-12 text-center mb-4">
-                @* <img class="w-25 m-auto" src="~/svg/logo-black.svg" /> *@
-            </div>
+        <title>@ViewData["Title"] - پورتال اداره کل</title>
 
-            @if (TempData["Message"] != null)
-            {
-                <div class="alert alert-@TempData["Class"]">
-                    @TempData["Message"]
+        <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/css/site.css" rel="stylesheet" />
+    </head>
+
+    <body class="bg-light">
+
+        <div class="container-fluid p-0">
+        <div class="authentication-wrapper authentication-cover">
+            <div class="authentication-inner row m-0">
+                <div class="d-flex col-12 col-lg-3 flex-column align-items-center authentication-bg p-sm-12 pt-12 ps-4 pe-4 position-relative">
+                    <div class="col-12 text-center mb-4">
+                        @* <img class="w-25 m-auto" src="~/svg/logo-black.svg" /> *@
+                    </div>
+
+                    @* ███ پیام‌ها اینجا نمایش داده می‌شوند ███ *@
+                    @{
+                        var messages = TempData.Get<List<string>>("Messages");
+                        var classes = TempData.Get<List<string>>("MessageClasses");
+                    }
+
+                    @if (messages != null && messages.Any())
+                    {
+                        for (int i = 0; i < messages.Count; i++)
+                        {
+                            var cls = classes.Count > i ? classes[i] : "info";
+
+                            <div class="alert alert-@cls alert-dismissible fade show mt-2">
+                                @messages[i]
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        }
+
+                        TempData.Remove("Messages");
+                        TempData.Remove("MessageClasses");
+                    }
+
+                    @if (TempData["Message"] != null)
+                    {
+                        <div class="alert alert-@TempData["Class"]">
+                            @TempData["Message"]
+                        </div>
+                    }
+
+                    <form method="post" asp-action="Login">
+                        <input type="hidden" asp-for="ReturnUrl" />
+
+                        <div class="mb-3">
+                            <label asp-for="UserName" class="form-label">نام کاربری</label>
+                            <input asp-for="UserName" class="form-control" placeholder="کد ملی" autofocus />
+                        </div>
+
+                        <div class="mb-3 form-password-toggle">
+                            <label asp-for="Password" class="form-label">کلمه عبور</label>
+                            <div class="input-group">
+                                <input asp-for="Password" type="password" class="form-control" placeholder="••••••••••••" />
+                                <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-3 form-check">
+                            <input asp-for="RememberMe" class="form-check-input" />
+                            <label asp-for="RememberMe" class="form-check-label">مرا بخاطر بسپار</label>
+                        </div>
+
+                        <button class="btn btn-primary w-100">ورود</button>
+                    </form>
                 </div>
-            }
 
-            <form method="post" asp-action="Login">
-                <input type="hidden" asp-for="ReturnUrl" />
-
-                <div class="mb-3">
-                    <label asp-for="UserName" class="form-label">نام کاربری</label>
-                    <input asp-for="UserName" class="form-control" placeholder="نام کاربری یا کد ملی" autofocus />
-                </div>
-
-                <div class="mb-3 form-password-toggle">
-                    <label asp-for="Password" class="form-label">کلمه عبور</label>
-                    <div class="input-group">
-                        <input asp-for="Password" type="password" class="form-control" placeholder="••••••••••••" />
-                        <span class="input-group-text cursor-pointer"><i class="ti ti-eye-off"></i></span>
+                <div class="d-none d-lg-flex col-lg-9 p-0">
+                    <div class="auth-cover-bg d-flex justify-content-center align-items-center"
+                         style="background-image:url('/img/sardar-image.jpg');background-size:cover;background-position:center;">
                     </div>
                 </div>
-
-                <div class="mb-3 form-check">
-                    <input asp-for="RememberMe" class="form-check-input" />
-                    <label asp-for="RememberMe" class="form-check-label">مرا بخاطر بسپار</label>
-                </div>
-
-                <button class="btn btn-primary w-100">ورود</button>
-            </form>
-        </div>
-
-        <div class="d-none d-lg-flex col-lg-9 p-0">
-            <div class="auth-cover-bg d-flex justify-content-center align-items-center"
-                 style="background-image:url('/img/sardar-image.jpg');background-size:cover;background-position:center;">
             </div>
         </div>
-    </div>
-</div>
+
+        </div>
+
+        <!-- Vendor Scripts (Bootstrap MUST be here) -->
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>
+
+
+
+

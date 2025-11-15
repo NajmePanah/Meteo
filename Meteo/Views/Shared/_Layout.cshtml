@@ -1,4 +1,6 @@
-﻿@* _Layout.cshtml *@
+﻿@using Main.Meteo.ExtensionMethods
+
+@* _Layout.cshtml *@
 @{
     Layout = "_BlankLayout";
 }
@@ -57,6 +59,7 @@
     <!-- Layout wrapper -->
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
+
             <!-- Menu -->
             <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
                 <div class="app-brand demo">
@@ -71,23 +74,56 @@
                         <i class="ti ti-x d-block d-xl-none ti-md align-middle"></i>
                     </a>
                 </div>
-                <div class="menu-inner-shadow"></div> 
+
+                <div class="menu-inner-shadow"></div>
                 @Html.Partial("_MenuBar")
             </aside>
             <!-- /Menu -->
             <!-- Layout container -->
             <div class="container">
                 <main role="main" class="pb-3">
+
+                    @* پیام‌ها *@
+                    @{
+                        var messages = TempData.Get<List<string>>("Messages");
+                        var classes = TempData.Get<List<string>>("MessageClasses");
+                    }
+
+                    @if (messages != null && messages.Any())
+                    {
+                        for (int i = 0; i < messages.Count; i++)
+                        {
+                            var cls = classes.Count > i ? classes[i] : "info";
+
+                            <div class="alert alert-@cls alert-dismissible fade show mt-2">
+                                @messages[i]
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        }
+
+                        TempData.Remove("Messages");
+                        TempData.Remove("MessageClasses");
+                    }
+
+                    @if (TempData["Message"] != null)
+                    {
+                        <div class="alert alert-@TempData["Class"]">
+                            @TempData["Message"]
+                        </div>
+                    }
+
                     @RenderBody()
                 </main>
             </div>
             <!-- /Layout page -->
+
         </div>
 
         <!-- Overlay -->
         <div class="layout-overlay layout-menu-toggle"></div>
         <div class="drag-target"></div>
     </div>
+
     <!-- /Layout wrapper --->
     <!-- Core JS -->
     <script src="@Url.Content("~/assets/vendor/libs/jquery/jquery.js")"></script>

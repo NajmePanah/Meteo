@@ -1,0 +1,157 @@
+@model PaginationViewModel<User,UserFilter>
+@using Main.Meteo.Models
+@using Meteo.ViewModels
+@using Meteo.ViewModels.Filter
+@{
+	ViewData["Title"] = "کاربران";
+	var area = ViewContext.RouteData.Values["area"]?.ToString();
+	area = !string.IsNullOrEmpty(area) ? $"/{area}/" : "/";
+	var baseUrl = area + ViewContext.RouteData.Values["controller"].ToString() + "/" + ViewContext.RouteData.Values["action"].ToString() + "/";
+}
+<link href="~/vendor/libs/sweetalert2/sweetalert2.css" rel="stylesheet" />
+<!-- Users List Table -->
+<div class="card">
+	<div class="card-header border-bottom pb-3">
+		<div class="d-flex align-items-start">
+			<div class="d-flex align-items-center">
+				<h5 class="card-title mb-0">@ViewData["Title"]</h5>
+			</div>
+			<div class="ms-auto">
+				<div class="dropdown z-2">
+					<button type="button" class="btn btn-icon btn-text-secondary rounded-pill dropdown-toggle hide-arrow p-0 waves-effect waves-light" data-bs-toggle="dropdown" aria-expanded="true">
+						<i class="ti ti-dots-vertical ti-md text-muted"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-end" data-popper-placement="bottom-start">
+						<li><a asp-action="Create" class="dropdown-item d-flex align-items-center waves-effect"><i class="ti ti-user-plus me-2"></i>کاربر جدید</a></li>
+						<li><a asp-action="SyncAll" class="dropdown-item d-flex align-items-center waves-effect"><i class="ti ti-user-plus me-2"></i>همگام سازی بدون نام ها  </a></li>
+						<li><a asp-action="SyncAll" asp-route-clean="true" class="dropdown-item d-flex align-items-center waves-effect"><i class="ti ti-user-plus me-2"></i>همگام سازی و حذف موارد خالی </a></li>
+						<li><a asp-action="SyncAll" asp-route-all="true" class="dropdown-item d-flex align-items-center waves-effect"><i class="ti ti-user-plus me-2"></i>همگام سازی اجباری همه </a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="card-header border-bottom pb-3">
+		<form asp-action="@ViewContext.RouteData.Values["action"]?.ToString()" method="get" asp-route-id="1">
+			<div class="d-flex justify-content-start align-items-center row pt-4 gap-4 gap-md-0">
+				<div class="col-2 user_status mb-3">
+					<input type="text" name="Filter.FirstName" value="@Model.Filter.FirstName" id="Filter_FirstName" class="form-control text-capitalize @(Model.Filter.FirstName!=null?"border border-info bg-light":"")" placeholder="نام" />
+                </div>
+				<div class="col-2 user_status mb-3">
+					<input type="text" name="Filter.LastName" value="@Model.Filter.LastName" id="Filter_LastName" class="form-control text-capitalize @(Model.Filter.LastName!=null?"border border-info bg-light":"")" placeholder="نام خانوادکی" />
+				</div>
+				<div class="col-2 user_status mb-3">
+					<input type="text" name="Filter.NationalCode" value="@Model.Filter.NationalCode" id="Filter_NationalCode" class="form-control text-capitalize @(Model.Filter.NationalCode!=null?"border border-info bg-light":"")" placeholder="کد ملی" />
+				</div>
+				<div class="col-2 user_status mb-3">
+					<input type="text" name="Filter.Username" value="@Model.Filter.Username" id="Filter_Username" class="form-control text-capitalize @(Model.Filter.Username!=null?"border border-info bg-light":"")" placeholder="نام کاربری" />
+				</div>
+				<div class="col-2 user_status mb-3">
+					<select name="Filter.RoleId" id="Filter_RoleId" class="form-select text-capitalize @(Model.Filter.RoleId!=null?"border border-info bg-light":"")">
+						<option value=""> نقش </option>
+						@foreach (var item in Model.Filter.Roles)
+						{
+							<option selected="@(item.Id==Model.Filter.RoleId)" value="@item.Id">@item.Title</option>
+						}
+					</select>
+				</div>
+				<div class="col-4 user_status mb-3">
+					<button class="btn btn-info me-1 waves-effect need-loader" type="submit">اعمال فیلتر</button>
+					<a href="@baseUrl" class="btn btn-primary me-1 waves-effect need-loader">ریست</a>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div class="card-body">
+		<div class="table-responsive mt-3">
+			<table class="table table-striped table-sm table-hover table-responsive">
+				<thead>
+					<tr class="table-active">
+						<th>شناسه</th>
+						<th>نام و نام خانوادگی</th>
+						<th>نام کاربری</th>
+						<th>کد پرسنلی</th>
+						<th>جنسیت</th>
+						<th>نقش ها</th>
+						<th>وضعیت</th>
+						<th>ایجاد</th>
+						<th><i class="ti ti-dots-vertical"></i></th>
+					</tr>
+				</thead>
+				<tbody>
+					@foreach (var item in Model.Data)
+					{
+						<tr>
+							<td>@item.Id</td>
+							<td>
+									@* @await Component.InvokeAsync("UserAvatar", new { user = item.Username, avatarClassName = "flex-shrink-0 avatar avatar-offline avatar-sm me-3", fullName = item.FullName, shoName = true }) *@
+							</td>
+							<td>@item.Username</td>
+							<td>@item.EmployeeCode</td>
+							<td>@item.Gender</td>
+							<td>@(string.Join("-", item.UserRoles.Select(prop => prop.Role.Title)))</td>
+							<td>
+								<span class="badge bg-label-@(item.IsActive?"success":"danger")">@(item.IsActive ? "فعال" : "غیر فعال")</span>
+							</td>
+							<td>@item.CreateTime/* .ToPersianShortDateString() */</td>
+							<td>
+								<div class="dropdown">
+									<button type="button" class="btn p-0 dropdown-toggle hide-arrow show" data-bs-toggle="dropdown" aria-expanded="true">
+										<i class="ti ti-dots-vertical"></i>
+									</button>
+									<div class="dropdown-menu" data-popper-placement="bottom-start">
+										<a asp-action="Edit" asp-route-id="@item.Id" class="dropdown-item waves-effect"><i class="ti ti-pencil me-1"></i> ویرایش</a>
+										<a asp-action="Delete" asp-route-id="@item.Id" class="dropdown-item waves-effect"><i class="ti ti-trash me-1"></i> حذف</a>
+										@if (item.IsActive)
+										{
+											<a asp-action="Deactive" asp-route-id="@item.Id" class="dropdown-item waves-effect"><i class="ti ti-user-pause me-1"></i> غیر فعالسازی</a>
+										}
+										else
+										{
+											<a asp-action="Active" asp-route-id="@item.Id" class="dropdown-item waves-effect"><i class="ti ti-user-heart me-1"></i> فعالسازی</a>
+										}
+										<hr class="dropdown-divider">
+										<a asp-action="Roles" asp-route-id="@item.Id" class="dropdown-item waves-effect"><i class="ti ti-user-check me-1"></i>مدیریت نقش ها</a>
+										<a asp-action="Positions" asp-route-id="@item.Id" class="dropdown-item waves-effect"><i class="ti ti-parking-circle me-1"></i>مدیریت سمت ها</a>
+										<a asp-action="TaxScopes" asp-route-id="@item.Id" class="dropdown-item waves-effect"><i class="ti ti-pencil me-1"></i>مدیریت حوزه ها</a>
+										<a asp-action="Sync" asp-route-username="@item.Username" class="dropdown-item waves-effect"><i class="ti ti-refresh  me-1"></i>همگام سازی</a>
+										<a asp-action="ResetPassword" asp-route-id="@item.Id" class="dropdown-item waves-effect"><i class="ti ti-user-shield me-1"></i>ریست پسورد</a>
+
+									</div>
+								</div>
+							</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div class="card-footer">
+		<div class="row">
+			@await Html.PartialAsync("_Pagination", Model.Pagination)
+		</div>
+	</div>
+</div>
+<script src="~/vendor/libs/jquery/jquery.js"></script>
+<script src="~/vendor/libs/sweetalert2/sweetalert2.js"></script>
+<script>
+	$(".need-confirm").on("click", (e) => {
+		e.preventDefault();
+		console.log("sss");
+		Swal.fire({
+			title: "آیا از انجام عملیات اطمینان دارید؟",
+			text: "این عملیات غیر قابل برگشت است",
+			icon: "warning",
+
+			showDenyButton:false,
+			confirmButtonColor: "#3085d6",
+			cancelButtonText: "خیر",
+			confirmButtonText: "بلی"
+		}).then((result) => {
+			if (result.isConfirmed) {
+				window.location = $(this).attr("href");
+			}
+		});
+	})
+</script>

@@ -1,26 +1,55 @@
 ﻿<ul class="menu-inner py-1">
-    <li class="menu-item">
-        <form asp-controller="Auth" asp-action="Logout" method="post" class="d-inline">
-            <button type="submit" class="btn btn-link text-danger">
-                <i class="ti ti-logout me-2"></i> خروج
-            </button>
-        </form>
-    </li>
-    <!-- Dashboards -->
-    <li class="menu-item active open">
+
+    <!-- User Box -->
+    <li class="menu-item  open">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
             <i class="menu-icon tf-icons ti ti-smart-home"></i>
-            <div data-i18n="Applications">کاربران</div>
-            <div class="badge bg-danger rounded-pill ms-auto">5</div>
+            <div data-i18n="پروفایل">پروفایل</div>
         </a>
+
         <ul class="menu-sub">
-            <li class="menu-item active">
-                <a href="@Url.Action("Index", "User")" class="menu-link">
-                    <div data-i18n="Management">مدیریت</div>
+
+            <li class="menu-item">
+                <a asp-controller="CurrentUser" asp-action="Security" class="menu-link">
+                    <div>پروفایل</div>
                 </a>
             </li>
-            <!-- بقیه منوها -->
+
+            <li class="menu-item">
+                <a href="javascript:void(0);" class="menu-link"
+                   onclick="document.getElementById('logoutForm').submit();">
+                    <div class="text-danger">خروج از سیستم<i class="ti ti-logout me-1"></i></div>
+                </a>
+
+                <form id="logoutForm" asp-controller="Auth" asp-action="Logout" method="post" hidden></form>
+            </li>
+
         </ul>
     </li>
-    <!-- سایر منوها -->
+
+    <!-- Divider -->
+
+    <!-- Dashboards -->
+    <li class="menu-item active">
+        <a href="javascript:void(0);" class="menu-link menu-toggle">
+            <i class="menu-icon tf-icons ti ti-smart-home"></i>
+            <div data-i18n="مدیر سیستم">مدیر سیستم</div>
+            @* <div class="badge bg-danger rounded-pill ms-auto">5</div> *@
+        </a>
+
+        <ul class="menu-sub">
+            <li class="menu-item">
+                <a href="@Url.Action("Index", "User")" class="menu-link">
+                    <div data-i18n="کاربران">کاربران</div>
+                </a>
+            </li>
+
+            <!-- سایر آیتم‌ها -->
+        </ul>
+    </li>
+
+    <!-- سایر منوها ... -->
+
 </ul>
+
+
